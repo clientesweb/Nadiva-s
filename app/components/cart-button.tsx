@@ -7,9 +7,13 @@ import { CartSidebar } from './cart-sidebar'
 import { CartItem } from '@/types/cart'
 import { Button } from "@/app/components/ui/button"
 
-export function CartButton() {
+interface CartButtonProps {
+  items: CartItem[];
+  setItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
+}
+
+export function CartButton({ items, setItems }: CartButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [items, setItems] = useState<CartItem[]>([])
 
   return (
     <>
