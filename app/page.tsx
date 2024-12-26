@@ -1,25 +1,24 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { TopBanner } from "./components/top-banner"
-import { Header } from "./components/header"
-import { Hero } from "./components/hero"
-import { Services } from "./components/services"
-import { Store } from "./components/store"
-import { Footer } from "./components/footer"
-import { CartButton } from "./components/cart-button"
-import { WhatsAppButton } from "./components/whatsapp-button"
-import { Preloader } from "./components/preloader"
-import { AdBanner } from "./components/ad-banner"
-import { InstagramReels } from "./components/instagram-reels"
-import { FAQ } from "./components/faq"
-import { CartItem } from "@/types/cart"
+import { TopBanner } from "@/app/components/top-banner"
+import { Header } from "@/app/components/header"
+import { Hero } from "@/app/components/hero"
+import { Services } from "@/app/components/services"
+import { Store } from "@/app/components/store"
+import { Footer } from "@/app/components/footer"
+import { CartButton } from "@/app/components/cart-button"
+import { WhatsAppButton } from "@/app/components/whatsapp-button"
+import { Preloader } from "@/app/components/preloader"
+import { AdBanner } from "@/app/components/ad-banner"
+import { InstagramReels } from "@/app/components/instagram-reels"
+import { FAQ } from "@/app/components/faq"
+import type { CartItem } from "@/types/cart"
 
 export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   useEffect(() => {
-    // Wrap localStorage access in try-catch to handle SSR
     try {
       const storedItems = localStorage.getItem('cartItems')
       if (storedItems) {
@@ -51,24 +50,22 @@ export default function Home() {
   }
 
   return (
-    <>
-      <div className="min-h-screen">
-        <Preloader />
-        <TopBanner />
-        <Header />
-        <main>
-          <Hero />
-          <Services />
-          <AdBanner />
-          <Store addToCart={addToCart} />
-          <InstagramReels />
-          <FAQ />
-        </main>
-        <Footer />
-        <CartButton items={cartItems} setItems={setCartItems} />
-        <WhatsAppButton />
-      </div>
-    </>
+    <div className="min-h-screen">
+      <Preloader />
+      <TopBanner />
+      <Header />
+      <main>
+        <Hero />
+        <Services />
+        <AdBanner />
+        <Store addToCart={addToCart} />
+        <InstagramReels />
+        <FAQ />
+      </main>
+      <Footer />
+      <CartButton items={cartItems} setItems={setCartItems} />
+      <WhatsAppButton />
+    </div>
   )
 }
 
