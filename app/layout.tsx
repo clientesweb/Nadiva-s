@@ -4,6 +4,7 @@ import './globals.css'
 
 const cormorant = Cormorant_Garamond({ 
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
   variable: '--font-cormorant'
 })
 
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     { rel: 'apple-touch-icon', url: '/apple-touch-icon.png' },
   ],
   viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#F9D5C5', // Color primario de tu tema
+  themeColor: '#F9D5C5',
   openGraph: {
     type: 'website',
     locale: 'es_AR',
