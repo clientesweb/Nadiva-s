@@ -1,5 +1,6 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 import { TopBanner } from "@/app/components/top-banner"
 import { Header } from "@/app/components/header"
@@ -9,16 +10,26 @@ import { Store } from "@/app/components/store"
 import { Footer } from "@/app/components/footer"
 import { CartButton } from "@/app/components/cart-button"
 import { WhatsAppButton } from "@/app/components/whatsapp-button"
-import { Preloader } from "@/app/components/preloader"
 import { AdBanner } from "@/app/components/ad-banner"
-import { InstagramReels } from "@/app/components/instagram-reels"
 import { FAQ } from "@/app/components/faq"
 import type { CartItem } from "@/types/cart"
 
+// Carga dinámica del Preloader para evitar problemas de hidratación
+const Preloader = dynamic(() => import('@/app/components/preloader').then(mod => mod.Preloader), {
+  ssr: false
+})
+
+// Carga dinámica de InstagramReels para evitar problemas de hidratación
+const InstagramReels = dynamic(() => import('@/app/components/instagram-reels').then(mod => mod.InstagramReels), {
+  ssr: false
+})
+
 export default function Home() {
+  const [mounted, setMounted] = useState(false)
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   useEffect(() => {
+    setMounted(true)
     try {
       const storedItems = localStorage.getItem('cartItems')
       if (storedItems) {
@@ -30,12 +41,14 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    try {
-      localStorage.setItem('cartItems', JSON.stringify(cartItems))
-    } catch (error) {
-      console.error('Error saving cart items:', error)
+    if (mounted) {
+      try {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+      } catch (error) {
+        console.error('Error saving cart items:', error)
+      }
     }
-  }, [cartItems])
+  }, [cartItems, mounted])
 
   const addToCart = (item: CartItem) => {
     setCartItems(prevItems => {
@@ -47,6 +60,10 @@ export default function Home() {
       }
       return [...prevItems, item]
     })
+  }
+
+  if (!mounted) {
+    return null
   }
 
   return (
