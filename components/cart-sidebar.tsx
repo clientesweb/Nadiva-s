@@ -1,29 +1,30 @@
 'use client'
 
-import { Dialog, DialogContent } from "@/components/ui/dialog"
-import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent } from "@/app/components/ui/dialog"
+import { Button } from "@/app/components/ui/button"
 import { X, Plus, Minus } from 'lucide-react'
 import { CartItem } from '@/types/cart'
+import React from 'react';
 
 interface CartSidebarProps {
-  open: boolean
-  onClose: () => void
-  items: CartItem[]
-  setItems: (items: CartItem[]) => void
+  open: boolean;
+  onClose: () => void;
+  items: CartItem[];
+  setItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
 export function CartSidebar({ open, onClose, items, setItems }: CartSidebarProps) {
   const updateQuantity = (id: number, quantity: number) => {
-    setItems(prevItems => 
-      prevItems.map(item => 
+    setItems((prevItems: CartItem[]) => {
+      return prevItems.map((item) => 
         item.id === id ? { ...item, quantity: Math.max(0, quantity) } : item
-      ).filter(item => item.quantity > 0)
-    )
-  }
+      ).filter((item) => item.quantity > 0);
+    });
+  };
 
   const removeFromCart = (id: number) => {
-    setItems(prevItems => prevItems.filter(item => item.id !== id))
-  }
+    setItems((prevItems: CartItem[]) => prevItems.filter((item) => item.id !== id));
+  };
 
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
