@@ -36,7 +36,7 @@ export function CartButton({ items, setItems }: CartButtonProps) {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
           >
-            {itemCount}
+            {itemCount.toString()}
           </motion.span>
         )}
       </motion.button>
