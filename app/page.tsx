@@ -19,14 +19,23 @@ export default function Home() {
   const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   useEffect(() => {
-    const storedItems = localStorage.getItem('cartItems')
-    if (storedItems) {
-      setCartItems(JSON.parse(storedItems))
+    // Wrap localStorage access in try-catch to handle SSR
+    try {
+      const storedItems = localStorage.getItem('cartItems')
+      if (storedItems) {
+        setCartItems(JSON.parse(storedItems))
+      }
+    } catch (error) {
+      console.error('Error loading cart items:', error)
     }
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    try {
+      localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    } catch (error) {
+      console.error('Error saving cart items:', error)
+    }
   }, [cartItems])
 
   const addToCart = (item: CartItem) => {
@@ -42,7 +51,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className="min-h-screen">
       <Preloader />
       <TopBanner />
       <Header />
@@ -57,7 +66,7 @@ export default function Home() {
       <Footer />
       <CartButton items={cartItems} setItems={setCartItems} />
       <WhatsAppButton />
-    </>
+    </div>
   )
 }
 
