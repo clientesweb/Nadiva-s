@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import imageLoader from '../../image-loader'
+import imageLoader from '@/app/lib/image-loader'
 
 const slides = [
   {
