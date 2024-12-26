@@ -27,6 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
+      <head>
+        <link rel="stylesheet" href="/_next/static/css/app/layout.css" />
+      </head>
       <body className={`${cormorant.variable} ${montserrat.variable} font-sans`}>
         {children}
       </body>
