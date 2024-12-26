@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Cormorant_Garamond, Montserrat } from 'next/font/google'
 import './globals.css'
 
@@ -25,12 +25,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  icons: [
-    { rel: 'icon', url: '/favicon.ico' },
-    { rel: 'apple-touch-icon', url: '/apple-touch-icon.png' },
-  ],
-  viewport: 'width=device-width, initial-scale=1',
-  themeColor: '#F9D5C5',
+  metadataBase: new URL('https://www.nadivas.com'),
   openGraph: {
     type: 'website',
     locale: 'es_AR',
@@ -56,6 +51,13 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  themeColor: '#F9D5C5',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +67,8 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={`${cormorant.variable} ${montserrat.variable} font-sans`}>
         {children}
