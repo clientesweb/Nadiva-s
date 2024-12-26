@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import imageLoader from '../lib/image-loader'
 
 const slides = [
   {
@@ -46,11 +47,13 @@ export function Hero() {
           transition={{ duration: 1 }}
         >
           <Image
+            loader={imageLoader}
             src={slides[currentSlide].image}
             alt="Hero background"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-secondary/20" />
         </motion.div>
