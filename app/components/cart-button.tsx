@@ -5,6 +5,7 @@ import { ShoppingBag } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { CartSidebar } from './cart-sidebar'
 import { CartItem } from '@/types/cart'
+import { Button } from "@/app/components/ui/button"
 
 export function CartButton() {
   const [isOpen, setIsOpen] = useState(false)
