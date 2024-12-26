@@ -1,8 +1,8 @@
 'use client'
 
 import { useState, useId } from 'react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog'
-import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/app/components/ui/dialog'
+import { Button } from "@/app/components/ui/button"
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Sparkles, Zap, Fingerprint, Sun, Bed, Droplet, Scissors, Infinity, GiftIcon as Massage, Eye, Paintbrush } from 'lucide-react'
