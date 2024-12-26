@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
-import imageLoader from '../lib/image-loader'
+import imageLoader from '../../image-loader'
 
 const slides = [
   {
@@ -54,6 +54,7 @@ export function Hero() {
             priority
             sizes="100vw"
             className="object-cover"
+            quality={75}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-secondary/20" />
         </motion.div>
