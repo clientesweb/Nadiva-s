@@ -14,6 +14,10 @@ interface CartSidebarProps {
 }
 
 export function CartSidebar({ open, onClose, items, updateItems }: CartSidebarProps) {
+  const formatPrice = (price: number) => {
+    return `$${price.toFixed(2)}`
+  }
+
   const updateQuantity = (id: number, quantity: number) => {
     updateItems((currentItems: CartItem[]) => 
       currentItems
@@ -34,10 +38,10 @@ export function CartSidebar({ open, onClose, items, updateItems }: CartSidebarPr
     const message = `Hola, me gustaría hacer un pedido:
 
 ${items.map(item => 
-    `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
+    `${item.name} x${item.quantity} - ${formatPrice(item.price * item.quantity)}`
   ).join('\n')}
 
-Total: $${total.toFixed(2)}`
+Total: ${formatPrice(total)}`
   
     const whatsappUrl = `https://wa.me/5493546510458?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
@@ -61,7 +65,7 @@ Total: $${total.toFixed(2)}`
                 <div key={item.id} className="flex items-center gap-4 p-4 bg-muted rounded-lg">
                   <div className="flex-1">
                     <h3 className="font-semibold">{item.name}</h3>
-                    <p className="text-sm text-muted-foreground">${item.price.toFixed(2)}</p>
+                    <p className="text-sm text-muted-foreground">{formatPrice(item.price)}</p>
                   </div>
                   <div className="flex items-center gap-2">
                     <Button 
@@ -71,7 +75,7 @@ Total: $${total.toFixed(2)}`
                     >
                       <Minus className="h-4 w-4" />
                     </Button>
-                    <span className="w-8 text-center">{item.quantity}</span>
+                    <span className="w-8 text-center">{item.quantity.toString()}</span>
                     <Button 
                       variant="outline" 
                       size="icon"
@@ -95,7 +99,7 @@ Total: $${total.toFixed(2)}`
         <div className="border-t pt-4">
           <div className="flex justify-between items-center mb-4">
             <span className="font-semibold">Total:</span>
-            <span className="text-xl font-bold">${total.toFixed(2)}</span>
+            <span className="text-xl font-bold">{formatPrice(total)}</span>
           </div>
           <Button 
             className="w-full" 
