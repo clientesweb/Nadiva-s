@@ -61,6 +61,10 @@ export function Store({ addToCart }: StoreProps) {
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null)
   const [quantity, setQuantity] = useState(1)
 
+  const formatPrice = (price: number) => {
+    return `$${price.toFixed(2)}`
+  }
+
   const handleAddToCart = (product: typeof products[0], quantity: number) => {
     addToCart({ ...product, quantity })
     setSelectedProduct(null)
@@ -98,7 +102,7 @@ export function Store({ addToCart }: StoreProps) {
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                 <p className="text-3xl font-bold text-primary mb-4">
-                  ${product.price.toFixed(2)}
+                  {formatPrice(product.price)}
                 </p>
                 <div className="flex justify-between">
                   <Button className="flex-1 mr-2" onClick={() => handleAddToCart(product, 1)}>
@@ -137,13 +141,13 @@ export function Store({ addToCart }: StoreProps) {
           </div>
           <div className="flex items-center justify-between mt-4">
             <span className="text-2xl font-bold text-primary">
-              ${selectedProduct?.price.toFixed(2)}
+              {selectedProduct && formatPrice(selectedProduct.price)}
             </span>
             <div className="flex items-center">
               <Button variant="outline" size="icon" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
                 <Minus className="h-4 w-4" />
               </Button>
-              <span className="mx-4 text-xl font-semibold">{quantity}</span>
+              <span className="mx-4 text-xl font-semibold">{quantity.toString()}</span>
               <Button variant="outline" size="icon" onClick={() => setQuantity(quantity + 1)}>
                 <Plus className="h-4 w-4" />
               </Button>
