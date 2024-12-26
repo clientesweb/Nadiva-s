@@ -5,7 +5,6 @@ import { ShoppingBag } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { CartSidebar } from './cart-sidebar'
 import { CartItem } from '@/types/cart'
-import { Button } from "@/app/components/ui/button"
 
 interface CartButtonProps {
   items: CartItem[];
@@ -14,6 +13,12 @@ interface CartButtonProps {
 
 export function CartButton({ items, setItems }: CartButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const handleUpdateItems = (updateFn: (items: CartItem[]) => CartItem[]) => {
+    setItems(updateFn)
+  }
+
+  const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
     <>
@@ -25,13 +30,13 @@ export function CartButton({ items, setItems }: CartButtonProps) {
         transition={{ type: "spring", stiffness: 260, damping: 20 }}
       >
         <ShoppingBag className="w-6 h-6 text-secondary" />
-        {items.length > 0 && (
+        {itemCount > 0 && (
           <motion.span
-            className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary text-primary text-xs flex items-center justify-center"
+            className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-secondary text-primary text-xs flex items-center justify-center font-bold"
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
           >
-            {items.reduce((sum, item) => sum + item.quantity, 0)}
+            {itemCount}
           </motion.span>
         )}
       </motion.button>
@@ -39,7 +44,7 @@ export function CartButton({ items, setItems }: CartButtonProps) {
         open={isOpen} 
         onClose={() => setIsOpen(false)}
         items={items}
-        setItems={setItems}
+        updateItems={handleUpdateItems}
       />
     </>
   )
