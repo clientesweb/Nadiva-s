@@ -1,17 +1,16 @@
 [build]
   command = "npm run build"
-  publish = ".next"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
   NEXT_USE_NETLIFY_EDGE = "true"
-  NODE_VERSION = "18.20.5"
-  NPM_VERSION = "10.8.2"
+  NODE_VERSION = "18.17.0"
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/next_renderer"
+  to = "/index.html"
   status = 200
 
