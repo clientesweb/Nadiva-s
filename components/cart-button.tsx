@@ -5,10 +5,19 @@ import { ShoppingBag } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { CartSidebar } from './cart-sidebar'
 import { CartItem } from '@/types/cart'
+import { Button } from "@/app/components/ui/button"
 
-export function CartButton() {
+interface CartButtonProps {
+  items: CartItem[];
+  setItems: React.Dispatch<React.SetStateAction<CartItem[]>>;
+}
+
+export function CartButton({ items, setItems }: CartButtonProps) {
   const [isOpen, setIsOpen] = useState(false)
-  const [items, setItems] = useState<CartItem[]>([])
+
+  const handleUpdateItems = (updateFn: (items: CartItem[]) => CartItem[]) => {
+    setItems(updateFn)
+  }
 
   return (
     <>
@@ -34,7 +43,7 @@ export function CartButton() {
         open={isOpen} 
         onClose={() => setIsOpen(false)}
         items={items}
-        setItems={setItems}
+        updateItems={handleUpdateItems}
       />
     </>
   )
