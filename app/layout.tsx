@@ -67,10 +67,10 @@ export default function RootLayout({
     <html lang="es">
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className={`${cormorant.variable} ${montserrat.variable} font-sans`}>
+      <body className={`${cormorant.variable} ${montserrat.variable} font-sans antialiased`}>
         {children}
       </body>
     </html>
