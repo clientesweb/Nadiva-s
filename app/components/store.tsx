@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/components/ui/dialog'
+import { Button } from "@/app/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '@/app/components/ui/dialog'
 import Image from "next/image"
 import { motion } from 'framer-motion'
 import { ShoppingCart, Plus, Minus, Eye } from 'lucide-react'
