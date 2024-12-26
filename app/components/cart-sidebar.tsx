@@ -15,11 +15,11 @@ interface CartSidebarProps {
 
 export function CartSidebar({ open, onClose, items, setItems }: CartSidebarProps) {
   const updateQuantity = (id: number, quantity: number) => {
-    setItems((prevItems: CartItem[]) => 
-      prevItems.map(item => 
+    setItems((prevItems: CartItem[]) => {
+      return prevItems.map((item) => 
         item.id === id ? { ...item, quantity: Math.max(0, quantity) } : item
-      ).filter(item => item.quantity > 0)
-    );
+      ).filter((item) => item.quantity > 0);
+    });
   };
 
   const removeFromCart = (id: number) => {
