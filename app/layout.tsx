@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Montserrat } from 'next/font/google'
+import { Bodoni_Moda, Montserrat } from 'next/font/google'
 import './globals.css'
 
-const cormorant = Cormorant_Garamond({ 
+const bodoni = Bodoni_Moda({ 
   subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-cormorant',
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-bodoni',
   display: 'swap'
 })
 
@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${cormorant.variable} ${montserrat.variable} font-sans`}>
+      <body className={`${bodoni.variable} ${montserrat.variable} font-sans`}>
         {children}
       </body>
     </html>
