@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <header className="bg-white shadow-md">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3" aria-label="Global">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4" aria-label="Global">
         <div className="flex items-center">
           <a
             href="https://m.facebook.com/@Nadivasok/?ref=xav_ig_profile_page&wtsid=rdr_0qlvH37LXnRUdD6GV&hr=1"
@@ -44,11 +44,11 @@ export function Header() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Nadiva's</span>
             <Image
-              className="h-12 w-auto"
+              className="h-16 w-auto"
               src="/logo.png"
               alt="Nadiva's Logo"
-              width={180}
-              height={48}
+              width={240}
+              height={64}
               priority
             />
           </Link>
@@ -85,11 +85,11 @@ export function Header() {
                 <Link href="/" className="-m-1.5 p-1.5">
                   <span className="sr-only">Nadiva's</span>
                   <Image
-                    className="h-8 w-auto"
+                    className="h-12 w-auto"
                     src="/logo.png"
                     alt="Nadiva's Logo"
-                    width={120}
-                    height={32}
+                    width={180}
+                    height={48}
                   />
                 </Link>
                 <button
