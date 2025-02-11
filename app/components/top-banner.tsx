@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const promotions = [
-  "¡Nuevo servicio! Tratamiento facial rejuvenecedor",
-  "20% de descuento en todos los masajes esta semana",
+  "Descuento a profesionales de la estetica y manicuría",
+  "10% de descuento en todos los masajes esta semana",
   "Compra 2 productos y llévate el tercero gratis"
 ]
 
