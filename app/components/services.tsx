@@ -31,7 +31,7 @@ const services = [
     description: "Reductores, Modeladores, Celulitis, Flacidez, Estrías",
     icon: Sparkles,
     image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/tratamientos-corporales-en-nadivas.jpg",
   },
   {
     title: "Tratamientos Faciales",
@@ -39,21 +39,21 @@ const services = [
       "Limpieza facial profunda, Peeling químico, Dermaplaning, Tratamientos para flacidez, arrugas, manchas, rosácea, acné",
     icon: Fingerprint,
     image:
-      "https://images.unsplash.com/photo-1570174006382-d8d28f2a5b82?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/tratamientos-faciales-estetica-en-nadivas.jpg",
   },
   {
     title: "Aparatología",
     description: "Ultracavitación, Lipoláser, Radiofrecuencia, Presoterapia, Electrodos, Hifu 20D, Luz pulsada láser",
     icon: Zap,
     image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/ultracavitacion-tratamiento-corporal-nadivas.jpg",
   },
   {
     title: "Cama Solar",
     description: "Bronceado seguro y controlado para un resplandor saludable todo el año.",
     icon: Sun,
     image:
-      "https://images.unsplash.com/photo-1532926381893-7542290edf1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/cama-solar-nadivas.jpg",
   },
   {
     title: "Cama de Masajes",
@@ -67,14 +67,14 @@ const services = [
     description: "Depilación higiénica y segura con cera, sistema descartable para una piel suave y libre de vello.",
     icon: Scissors,
     image:
-      "https://images.unsplash.com/photo-1609357605129-26f69add5d6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/depilacion-descartable-nadivas.jpg",
   },
   {
     title: "Depilación Definitiva",
     description: "Di adiós al vello no deseado con nuestros tratamientos de depilación permanente.",
     icon: Infinity,
     image:
-      "https://images.unsplash.com/photo-1598524374912-6b0b0bab49d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/primera-sesion-de-depilacion-laser-nadivas.jpg",
   },
   {
     title: "Masajes",
@@ -96,7 +96,7 @@ const services = [
     description: "Perfilado y diagramado de cejas, Lifting de cejas, Lifting de pestañas",
     icon: Eye,
     image:
-      "https://images.unsplash.com/photo-1588511405746-e84feab4a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      "/images/cejas-pestañas-nadivas.jpg",
   },
 ]
 
