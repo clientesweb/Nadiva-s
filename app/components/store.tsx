@@ -11,10 +11,10 @@ import { CartItem } from '@/types/cart'
 const products = [
   {
     id: 1,
-    name: "Crema Facial Hidratante",
-    price: 4999,
-    image: "https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    description: "Hidratación profunda para una piel radiante y suave."
+    name: "Suero Facial Nano Hialurónico",
+    price: consultar,
+    image: "/suero-facial-nano-hialuronico.webp",
+    description: "Serum Nano Hialurónico concentrado antiage de hidratación y elasticidad. La exquisita combinación de Hialurónico de distinto peso molecular otorga a este Serum una cualidad específica y única, penetrando en los distintos niveles de nuestra piel ya que las moléculas pequeñas del Hialurónico BPM penetran más y más profundo en tu piel.  100 % Antiedad."
   },
   {
     id: 2,
