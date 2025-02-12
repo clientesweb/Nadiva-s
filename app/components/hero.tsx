@@ -8,9 +8,9 @@ import Image from "next/image"
 
 const slides = [
   {
-    image: "/masajes-terapeuticos-villa-del-dique-nadivas.jpg",
-    title: ["Relájate", "y Renuévate"],
-    subtitle: "Disfruta de nuestros masajes terapéuticos y tratamientos de bienestar",
+    image: "/belleza-integral-villa-del-dique-nadivas.jpg",
+    title: ["Belleza Integral", "en Villa Del Dique"],
+    subtitle: "Descubre nuestros tratamientos faciales, corporales y servicios de estética avanzados",
   },
   {
     image: "/aparatologia-villa-del-dique-nadivas.jpg",
@@ -18,9 +18,9 @@ const slides = [
     subtitle: "Experimenta resultados sorprendentes con nuestra aparatología de última generación",
   },
   {
-    image: "/belleza-integral-villa-del-dique-nadivas.jpg",
-    title: ["Belleza Integral", "en Villa Del Dique"],
-    subtitle: "Descubre nuestros tratamientos faciales, corporales y servicios de estética avanzados",
+    image: "/masajes-terapeuticos-villa-del-dique-nadivas.jpg",
+    title: ["Relájate", "y Renuévate"],
+    subtitle: "Disfruta de nuestros masajes terapéuticos y tratamientos de bienestar",
   },
 ]
 
