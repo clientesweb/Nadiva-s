@@ -1,19 +1,7 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Montserrat } from "next/font/google"
 import "./globals.css"
 import type React from "react"
 import Script from "next/script"
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-cormorant",
-})
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-})
 
 export const metadata: Metadata = {
   title: {
@@ -126,7 +114,7 @@ export default function RootLayout({
       <head>
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${cormorant.variable} ${montserrat.variable} font-sans`}>
+      <body>
         {children}
         <Script
           id="local-business-schema"
@@ -164,42 +152,8 @@ export default function RootLayout({
             }),
           }}
         />
-        <Script
-          id="services-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ItemList",
-              itemListElement: [
-                {
-                  "@type": "Service",
-                  name: "Tratamientos Corporales",
-                  description: "Rejuvenece y revitaliza tu cuerpo con nuestros tratamientos personalizados.",
-                  provider: {
-                    "@type": "BeautySalon",
-                    name: "Nadiva's Estética e Insumos",
-                  },
-                },
-                {
-                  "@type": "Service",
-                  name: "Aparatología",
-                  description:
-                    "Tecnología de vanguardia para resultados excepcionales en tratamientos faciales y corporales.",
-                  provider: {
-                    "@type": "BeautySalon",
-                    name: "Nadiva's Estética e Insumos",
-                  },
-                },
-                // Añade más servicios aquí...
-              ],
-            }),
-          }}
-        />
       </body>
     </html>
   )
 }
-
-
 
