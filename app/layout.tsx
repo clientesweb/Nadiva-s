@@ -152,6 +152,91 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          id="services-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              itemListElement: [
+                {
+                  "@type": "Service",
+                  position: 1,
+                  name: "Tratamientos Corporales",
+                  description: "Reductores, Modeladores, Celulitis, Flacidez, Estrías",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  position: 2,
+                  name: "Tratamientos Faciales",
+                  description:
+                    "Limpieza facial profunda, Peeling químico, Dermaplaning, Tratamientos para flacidez, arrugas, manchas, rosácea, acné",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  position: 3,
+                  name: "Aparatología",
+                  description:
+                    "Ultracavitación, Lipoláser, Radiofrecuencia, Presoterapia, Electrodos, Hifu 20D, Luz pulsada láser",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  position: 4,
+                  name: "Depilación",
+                  description: "Sistema Descartable y Depilación Definitiva",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  position: 5,
+                  name: "Masajes",
+                  description:
+                    "Descontracturantes, Relajantes, Piedras calientes, Drenaje linfático manual (método vodder), Reductores",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  position: 6,
+                  name: "Cuidado de Uñas y Pies",
+                  description: "Manicura, pedicura y cuidado de uñas",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  position: 7,
+                  name: "Cejas y Pestañas",
+                  description: "Perfilado y diagramado de cejas, Lifting de cejas, Lifting de pestañas",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   )
