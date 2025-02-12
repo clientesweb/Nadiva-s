@@ -27,7 +27,7 @@ const products = [
   {
     id: 2,
     name: "SkinCer - Emulsión Facial Ultra Hidratante Ceramidas",
-    price: 3999,
+    price: 15800,
     image: "/products/skincer-emulsion-facial.webp",
     description:
       "Gracias a su fórmula ultra hidratante mantiene la humedad, promueve la hidratación epidérmica y aumenta la cohesión celular. Además, evita la descamación y previene el envejecimiento. ¡Es apta para todo tipo de piel!",
@@ -35,7 +35,7 @@ const products = [
   {
     id: 3,
     name: "Skincer Retil Max (retinol 0.1 %)",
-    price: 5499,
+    price: 23200,
     image: "/products/skincer-retil-max.webp",
     description:
       "SKINCER RETIL MAX ✨ ¡Con Retinol Puro, Ceramidas y Niacinamida! | 50 ml. Atenúa signos de envejecimiento, acelera la renovación celular, empareja el tono de la piel, atenúa manchas y líneas de expresión, brinda una luminosidad única. Formula única: el retinol potencia los efectos del resto de los activos. Ideal pieles secas y maduras.",
