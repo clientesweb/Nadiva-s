@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Villa Del Dique",
     "Córdoba",
   ],
-  authors: [{ name: "Nadiva's", url: "https://www.nadivas.com" }],
+  authors: [{ name: "Nadiva's", url: "https://www.nadivas.com.ar" }],
   creator: "Nadiva's",
   publisher: "Nadiva's",
   formatDetection: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://www.nadivas.com"),
+  metadataBase: new URL("https://www.nadivas.com.ar"),
   alternates: {
     canonical: "/",
   },
@@ -76,14 +76,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://www.nadivas.com/",
+    url: "https://www.nadivas.com.ar/",
     siteName: "Nadiva's Estética e Insumos",
     title: "Nadiva's Estética e Insumos - Belleza y Bienestar en Villa Del Dique",
     description:
       "Centro de estética integral e insumos de belleza en Villa Del Dique. Tratamientos faciales, corporales, depilación, y productos de calidad.",
     images: [
       {
-        url: "https://www.nadivas.com/og-image.jpg",
+        url: "https://www.nadivas.com.ar/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Nadiva's Estética e Insumos - Servicios de belleza y bienestar",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     title: "Nadiva's Estética e Insumos - Belleza y Bienestar",
     description:
       "Centro de estética integral e insumos de belleza en Villa Del Dique. Descubre nuestros tratamientos y productos.",
-    images: ["https://www.nadivas.com/twitter-image.jpg"],
+    images: ["https://www.nadivas.com.ar/twitter-image.jpg"],
     creator: "@nadivas",
     site: "@nadivas",
   },
@@ -124,8 +124,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "BeautySalon",
               name: "Nadiva's Estética e Insumos",
-              image: "https://www.nadivas.com/logo.png",
-              url: "https://www.nadivas.com",
+              image: "https://www.nadivas.com.ar/logo.png",
+              url: "https://www.nadivas.com.ar",
               telephone: "+5493546510458",
               address: {
                 "@type": "PostalAddress",
