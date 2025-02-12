@@ -47,7 +47,7 @@ export function Hero() {
         >
           <Image
             src={slides[currentSlide].image || "/placeholder.svg"}
-            alt="Hero background"
+            alt={`Nadiva's - ${slides[currentSlide].title.join(" ")}`}
             layout="fill"
             objectFit="cover"
             objectPosition="center"
@@ -112,4 +112,6 @@ export function Hero() {
     </div>
   )
 }
+
+
 
