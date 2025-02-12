@@ -8,22 +8,19 @@ import Image from "next/image"
 
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    title: ["Belleza Integral", "en Villa Del Dique"],
-    subtitle: "Descubre nuestros tratamientos faciales, corporales y servicios de estética avanzados",
+    image: "/masajes-terapeuticos-villa-del-dique-nadivas.jpg",
+    title: ["Relájate", "y Renuévate"],
+    subtitle: "Disfruta de nuestros masajes terapéuticos y tratamientos de bienestar",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    image: "/aparatologia-villa-del-dique-nadivas.jpg",
     title: ["Tecnología", "de Vanguardia"],
     subtitle: "Experimenta resultados sorprendentes con nuestra aparatología de última generación",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: ["Relájate", "y Renuévate"],
-    subtitle: "Disfruta de nuestros masajes terapéuticos y tratamientos de bienestar",
+    image: "/belleza-integral-villa-del-dique-nadivas.jpg",
+    title: ["Belleza Integral", "en Villa Del Dique"],
+    subtitle: "Descubre nuestros tratamientos faciales, corporales y servicios de estética avanzados",
   },
 ]
 
@@ -38,7 +35,7 @@ export function Hero() {
   }, [])
 
   return (
-    <div className="relative h-[calc(100vh-88px)] overflow-hidden">
+    <div className="relative h-screen overflow-hidden">
       <AnimatePresence initial={false}>
         <motion.div
           key={currentSlide}
@@ -53,7 +50,9 @@ export function Hero() {
             alt="Hero background"
             layout="fill"
             objectFit="cover"
+            objectPosition="center"
             quality={100}
+            priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-secondary/60 to-secondary/20" />
         </motion.div>
