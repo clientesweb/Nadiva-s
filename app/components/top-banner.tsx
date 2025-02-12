@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const promotions = [
   "Descuento a profesionales de la estetica y manicuría",
-  "10% de descuento en todos los masajes esta semana",
-  "Compra 2 productos y llévate el tercero gratis"
+  "30% OFF para profesionales de la belleza",
+  "¡Cuidamos tú piel, conocé tu mejor versión!"
 ]
 
 export function TopBanner() {
@@ -31,7 +31,7 @@ export function TopBanner() {
           transition={{ duration: 0.5 }}
         >
           {promotions[currentPromotion]}
-          <a href="#" className="ml-2 underline hover:text-white">
+          <a href="https://wa.me/5493546510458" className="ml-2 underline hover:text-white">
             Más info
           </a>
         </motion.p>
