@@ -164,8 +164,42 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          id="services-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              itemListElement: [
+                {
+                  "@type": "Service",
+                  name: "Tratamientos Corporales",
+                  description: "Rejuvenece y revitaliza tu cuerpo con nuestros tratamientos personalizados.",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                {
+                  "@type": "Service",
+                  name: "Aparatología",
+                  description:
+                    "Tecnología de vanguardia para resultados excepcionales en tratamientos faciales y corporales.",
+                  provider: {
+                    "@type": "BeautySalon",
+                    name: "Nadiva's Estética e Insumos",
+                  },
+                },
+                // Añade más servicios aquí...
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   )
 }
+
+
 
