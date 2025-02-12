@@ -10,19 +10,19 @@ const slides = [
   {
     image:
       "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    title: "Belleza Integral en Villa Del Dique",
+    title: ["Belleza Integral", "en Villa Del Dique"],
     subtitle: "Descubre nuestros tratamientos faciales, corporales y servicios de estética avanzados",
   },
   {
     image:
       "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Tecnología de Vanguardia",
+    title: ["Tecnología", "de Vanguardia"],
     subtitle: "Experimenta resultados sorprendentes con nuestra aparatología de última generación",
   },
   {
     image:
       "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Relájate y Renuévate",
+    title: ["Relájate", "y Renuévate"],
     subtitle: "Disfruta de nuestros masajes terapéuticos y tratamientos de bienestar",
   },
 ]
@@ -61,12 +61,13 @@ export function Hero() {
 
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
         <motion.h1
-          className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-4 font-serif"
+          className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 font-serif"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          {slides[currentSlide].title}
+          <span className="text-primary">{slides[currentSlide].title[0]}</span>{" "}
+          <span className="text-white">{slides[currentSlide].title[1]}</span>
         </motion.h1>
         <motion.p
           className="text-xl sm:text-2xl md:text-3xl text-white mb-8 font-sans max-w-2xl"
@@ -91,7 +92,9 @@ export function Hero() {
             variant="outline"
             className="bg-transparent border-white text-white hover:bg-white/20 text-lg px-8 py-6"
           >
-            <Link href="#contacto">Contáctanos</Link>
+            <a href="https://wa.me/5493546510458" target="_blank" rel="noopener noreferrer">
+              Contáctanos
+            </a>
           </Button>
         </motion.div>
       </div>
