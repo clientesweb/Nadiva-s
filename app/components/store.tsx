@@ -19,7 +19,7 @@ const products = [
   {
     id: 1,
     name: "Suero Facial Nano Hialurónico",
-    price: 4999,
+    price: 18200,
     image: "/products/suero-facial-nano-hialuronico.webp",
     description:
       "Serum Nano Hialurónico concentrado antiage de hidratación y elasticidad. La exquisita combinación de Hialurónico de distinto peso molecular otorga a este Serum una cualidad específica y única, penetrando en los distintos niveles de nuestra piel ya que las moléculas pequeñas del Hialurónico BPM penetran más y más profundo en tu piel. 100 % Antiedad.",
@@ -43,7 +43,7 @@ const products = [
   {
     id: 4,
     name: "Suero Facial Iluminador con Vitamina C",
-    price: 4499,
+    price: 18200,
     image: "/products/suero-facial-iluminador.webp",
     description:
       "Realmente Iluminaremos tu rostro con este nuevo Suero Iluminador. Buscamos la alquimia perfecta para que tu rostro refleje esa luz que adoramos. Todos sus principios activos logran un efecto de renovación celular, y brillar.",
