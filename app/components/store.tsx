@@ -51,7 +51,7 @@ const products = [
   {
     id: 5,
     name: "Suero Equilibre",
-    price: 3999,
+    price: 16500,
     image: "/products/suero-equilibre.webp",
     description:
       "El equilibrio de nuestra mente, nuestras emociones y nuestro cuerpo es aquello que permite una vida plena y coherente.",
@@ -59,7 +59,7 @@ const products = [
   {
     id: 6,
     name: "Suero Facial Niacinamida",
-    price: 4299,
+    price: 18200,
     image: "/products/suero-facial-niacinamida.webp",
     description:
       "Este Nuevo serum Niacinamida es un producto 'Apto para todo Público'. Y con esto queremos decir que la Niacinamida es un principio activo tan versátil que tiene beneficios para todos los tipos de rostro. Regula la secreción de sebo e hidrata, reduce visiblemente la apariencia de poros, y al favorecer la barrera que protege la humedad de tu rostro, logra una hidratación y restaura el equilibrio cutáneo.",
