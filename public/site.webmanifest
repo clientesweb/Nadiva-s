@@ -17,7 +17,7 @@
   "theme_color": "#F9D5C5",
   "background_color": "#ffffff",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "https://www.nadivas.com.ar/",
   "orientation": "portrait"
 }
 
