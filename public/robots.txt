@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.nadivas.com/sitemap.xml
+Sitemap: https://www.nadivas.com.ar/sitemap.xml
 
