@@ -2,12 +2,7 @@ import type { Config } from "tailwindcss"
 
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-  ],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   theme: {
     container: {
       center: true,
@@ -18,8 +13,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-montserrat)', 'sans-serif'],
-        serif: ['var(--font-cormorant)', 'serif'],
+        sans: ["Roboto", "sans-serif"],
+        serif: ["Playfair Display", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
