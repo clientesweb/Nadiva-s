@@ -84,10 +84,22 @@ export function Store({ addToCart }: StoreProps) {
     <section id="tienda" className="py-24 bg-gradient-to-b from-background to-accent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4 animate-fade-in">Tienda de Insumos</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up">
-            Productos profesionales para tu cuidado personal
-          </p>
+          <motion.h2
+            className="text-4xl font-bold tracking-tight sm:text-5xl mb-4 animate-fade-in"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Tienda de Insumos Profesionales
+          </motion.h2>
+          <motion.p
+            className="text-xl text-muted-foreground max-w-2xl mx-auto animate-slide-up"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            Productos de alta calidad para tu cuidado personal en Villa Del Dique
+          </motion.p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
@@ -99,16 +111,29 @@ export function Store({ addToCart }: StoreProps) {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <div className="relative h-64 w-full">
-                <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+                <Image
+                  src={product.image || "/placeholder.svg"}
+                  alt={`${product.name} - Producto de belleza en Nadiva's`}
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                 <p className="text-3xl font-bold text-primary mb-4">${product.price.toFixed(2)}</p>
                 <div className="flex justify-between">
-                  <Button className="flex-1 mr-2" onClick={() => handleAddToCart(product, 1)}>
+                  <Button
+                    className="flex-1 mr-2"
+                    onClick={() => handleAddToCart(product, 1)}
+                    aria-label={`Agregar ${product.name} al carrito`}
+                  >
                     <ShoppingCart className="mr-2 h-4 w-4" /> Agregar
                   </Button>
-                  <Button variant="outline" onClick={() => setSelectedProduct(product)}>
+                  <Button
+                    variant="outline"
+                    onClick={() => setSelectedProduct(product)}
+                    aria-label={`Ver más detalles de ${product.name}`}
+                  >
                     <Eye className="mr-2 h-4 w-4" /> Ver más
                   </Button>
                 </div>
@@ -134,7 +159,7 @@ export function Store({ addToCart }: StoreProps) {
             {selectedProduct && (
               <Image
                 src={selectedProduct.image || "/placeholder.svg"}
-                alt={selectedProduct.name}
+                alt={`${selectedProduct.name} - Producto de belleza en Nadiva's`}
                 fill
                 className="object-cover"
               />
@@ -143,11 +168,21 @@ export function Store({ addToCart }: StoreProps) {
           <div className="flex items-center justify-between mt-4">
             <span className="text-2xl font-bold text-primary">${selectedProduct?.price.toFixed(2)}</span>
             <div className="flex items-center">
-              <Button variant="outline" size="icon" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                aria-label="Disminuir cantidad"
+              >
                 <Minus className="h-4 w-4" />
               </Button>
               <span className="mx-4 text-xl font-semibold">{quantity}</span>
-              <Button variant="outline" size="icon" onClick={() => setQuantity(quantity + 1)}>
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setQuantity(quantity + 1)}
+                aria-label="Aumentar cantidad"
+              >
                 <Plus className="h-4 w-4" />
               </Button>
             </div>
@@ -165,6 +200,31 @@ export function Store({ addToCart }: StoreProps) {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: products.map((product, index) => ({
+            "@type": "Product",
+            position: index + 1,
+            name: product.name,
+            description: product.description,
+            image: `https://www.nadivas.com.ar${product.image}`,
+            offers: {
+              "@type": "Offer",
+              price: product.price,
+              priceCurrency: "ARS",
+              availability: "https://schema.org/InStock",
+              url: `https://www.nadivas.com.ar/tienda#${product.id}`,
+            },
+            brand: {
+              "@type": "Brand",
+              name: "Nadiva's",
+            },
+          })),
+        })}
+      </script>
     </section>
   )
 }
