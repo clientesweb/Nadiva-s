@@ -30,30 +30,26 @@ const services = [
     title: "Tratamientos Corporales",
     description: "Reductores, Modeladores, Celulitis, Flacidez, Estrías",
     icon: Sparkles,
-    image:
-      "/images/tratamientos-corporales-en-nadivas.jpg",
+    image: "/images/tratamientos-corporales-en-nadivas.jpg",
   },
   {
     title: "Tratamientos Faciales",
     description:
       "Limpieza facial profunda, Peeling químico, Dermaplaning, Tratamientos para flacidez, arrugas, manchas, rosácea, acné",
     icon: Fingerprint,
-    image:
-      "/images/tratamientos-faciales-estetica-en-nadivas.jpg",
+    image: "/images/tratamientos-faciales-estetica-en-nadivas.jpg",
   },
   {
     title: "Aparatología",
     description: "Ultracavitación, Lipoláser, Radiofrecuencia, Presoterapia, Electrodos, Hifu 20D, Luz pulsada láser",
     icon: Zap,
-    image:
-      "/images/ultracavitacion-tratamiento-corporal-nadivas.jpg",
+    image: "/images/ultracavitacion-tratamiento-corporal-nadivas.jpg",
   },
   {
     title: "Cama Solar",
     description: "Bronceado seguro y controlado para un resplandor saludable todo el año.",
     icon: Sun,
-    image:
-      "/images/cama-solar-nadivas.jpg",
+    image: "/images/cama-solar-nadivas.jpg",
   },
   {
     title: "Cama de Masajes",
@@ -66,15 +62,13 @@ const services = [
     title: "Depilación Sistema Descartable",
     description: "Depilación higiénica y segura con cera, sistema descartable para una piel suave y libre de vello.",
     icon: Scissors,
-    image:
-      "/images/depilacion-descartable-nadivas.jpg",
+    image: "/images/depilacion-descartable-nadivas.jpg",
   },
   {
     title: "Depilación Definitiva",
     description: "Di adiós al vello no deseado con nuestros tratamientos de depilación permanente.",
     icon: Infinity,
-    image:
-      "/images/primera-sesion-de-depilacion-laser-nadivas.jpg",
+    image: "/images/primera-sesion-de-depilacion-laser-nadivas.jpg",
   },
   {
     title: "Masajes",
@@ -95,8 +89,7 @@ const services = [
     title: "Cejas y Pestañas",
     description: "Perfilado y diagramado de cejas, Lifting de cejas, Lifting de pestañas",
     icon: Eye,
-    image:
-      "/images/cejas-pestañas-nadivas.jpg",
+    image: "/images/cejas-pestañas-nadivas.jpg",
   },
 ]
 
@@ -114,7 +107,7 @@ export function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            Nuestros Servicios
+            Servicios de Estética y Belleza en Nadiva's
           </motion.h2>
           <motion.p
             className="text-xl text-muted-foreground max-w-2xl mx-auto"
@@ -122,7 +115,7 @@ export function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Descubre nuestra amplia gama de servicios de belleza y bienestar
+            Descubre nuestra amplia gama de servicios de belleza y bienestar en Villa Del Dique
           </motion.p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -134,10 +127,12 @@ export function Services() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => setSelectedService(service)}
+              role="button"
+              aria-label={`Ver detalles de ${service.title}`}
             >
               <Image
                 src={service.image || "/placeholder.svg"}
-                alt={service.title}
+                alt={`${service.title} en Nadiva's Estética e Insumos - ${service.description}`}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -146,7 +141,7 @@ export function Services() {
                 <service.icon className="text-primary w-12 h-12 mb-4" />
                 <h3 className="text-2xl font-serif text-primary mb-2">{service.title}</h3>
                 <p className="text-white text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                  {service.description}
+                  <strong>Incluye:</strong> {service.description}
                 </p>
               </div>
             </motion.div>
@@ -157,14 +152,18 @@ export function Services() {
       <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
         <DialogContent className="sm:max-w-[625px]" aria-describedby={descriptionId}>
           <DialogHeader>
-            <DialogTitle className="text-2xl font-serif text-secondary">{selectedService?.title}</DialogTitle>
-            <DialogDescription id={descriptionId}>{selectedService?.description}</DialogDescription>
+            <DialogTitle asChild>
+              <h3 className="text-2xl font-serif text-secondary">{selectedService?.title}</h3>
+            </DialogTitle>
+            <DialogDescription id={descriptionId}>
+              <strong>Descripción detallada:</strong> {selectedService?.description}
+            </DialogDescription>
           </DialogHeader>
           {selectedService && (
             <div className="mt-4 relative w-full h-[300px] rounded-lg overflow-hidden">
               <Image
                 src={selectedService.image || "/placeholder.svg"}
-                alt={selectedService.title}
+                alt={`${selectedService.title} en Nadiva's Estética e Insumos - ${selectedService.description}`}
                 fill
                 className="object-cover"
               />
@@ -175,6 +174,28 @@ export function Services() {
           </DialogFooter>
         </DialogContent>
       </Dialog>
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: services.map((service, index) => ({
+            "@type": "Service",
+            position: index + 1,
+            name: service.title,
+            description: service.description,
+            provider: {
+              "@type": "BeautySalon",
+              name: "Nadiva's Estética e Insumos",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Villa Del Dique",
+                addressRegion: "Córdoba",
+                addressCountry: "AR",
+              },
+            },
+          })),
+        })}
+      </script>
     </section>
   )
 }
