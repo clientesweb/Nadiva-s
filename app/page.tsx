@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import dynamic from 'next/dynamic'
-import { useState, useEffect } from 'react'
+import dynamic from "next/dynamic"
+import { useState, useEffect } from "react"
 import { TopBanner } from "@/app/components/top-banner"
 import { Header } from "@/app/components/header"
 import { Hero } from "@/app/components/hero"
@@ -14,14 +14,9 @@ import { AdBanner } from "@/app/components/ad-banner"
 import { FAQ } from "@/app/components/faq"
 import type { CartItem } from "@/types/cart"
 
-// Carga dinámica del Preloader para evitar problemas de hidratación
-const Preloader = dynamic(() => import('@/app/components/preloader').then(mod => mod.Preloader), {
-  ssr: false
-})
-
 // Carga dinámica de InstagramReels para evitar problemas de hidratación
-const InstagramReels = dynamic(() => import('@/app/components/instagram-reels').then(mod => mod.InstagramReels), {
-  ssr: false
+const InstagramReels = dynamic(() => import("@/app/components/instagram-reels").then((mod) => mod.InstagramReels), {
+  ssr: false,
 })
 
 export default function Home() {
@@ -31,32 +26,30 @@ export default function Home() {
   useEffect(() => {
     setMounted(true)
     try {
-      const storedItems = localStorage.getItem('cartItems')
+      const storedItems = localStorage.getItem("cartItems")
       if (storedItems) {
         setCartItems(JSON.parse(storedItems))
       }
     } catch (error) {
-      console.error('Error loading cart items:', error)
+      console.error("Error loading cart items:", error)
     }
   }, [])
 
   useEffect(() => {
     if (mounted) {
       try {
-        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+        localStorage.setItem("cartItems", JSON.stringify(cartItems))
       } catch (error) {
-        console.error('Error saving cart items:', error)
+        console.error("Error saving cart items:", error)
       }
     }
   }, [cartItems, mounted])
 
   const addToCart = (item: CartItem) => {
-    setCartItems(prevItems => {
-      const existingItem = prevItems.find(i => i.id === item.id)
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((i) => i.id === item.id)
       if (existingItem) {
-        return prevItems.map(i => 
-          i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
-        )
+        return prevItems.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i))
       }
       return [...prevItems, item]
     })
@@ -68,7 +61,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      <Preloader />
       <TopBanner />
       <Header />
       <main>
